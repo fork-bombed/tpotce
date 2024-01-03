@@ -33,7 +33,7 @@ RUN apk --no-cache -U add \
     adduser -S -s /bin/ash -u 2000 -D -g 2000 tpot && \
 #
 # Install tpot
-    git clone --depth=1 https://github.com/telekom-security/tpotce /opt/tpot && \
+    git clone --depth=1 https://github.com/fork-bombed/tpotce /opt/tpot && \
     cd /opt/tpot && \
     sed -i "s#/opt/tpot/etc/logrotate/status#/data/tpot/etc/logrotate/status#g" bin/clean.sh && \
     sed -i "s#/opt/tpot/etc/compose/elk_environment#/data/tpot/etc/compose/elk_environment#g" bin/clean.sh && \

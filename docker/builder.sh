@@ -4,9 +4,8 @@
 myPLATFORMS="linux/amd64,linux/arm64"
 myHUBORG="dtagdevsec"
 myTAG="2204"
-myIMAGESBASE="adbhoney ciscoasa citrixhoneypot conpot cowrie ddospot dicompot dionaea elasticpot endlessh ewsposter fatt glutton hellpot heralding honeypots honeytrap ipphoney log4pot mailoney medpot nginx p0f redishoneypot sentrypeer spiderfoot suricata wordpot"
+myIMAGESBASE="adbhoney cowrie dionaea nginx p0f redishoneypot sentrypeer spiderfoot suricata wordpot"
 myIMAGESELK="elasticsearch kibana logstash map"
-myIMAGESTANNER="phpox redis snare tanner"
 myBUILDERLOG="builder.log"
 myBUILDERERR="builder.err"
 myBUILDCACHE="/buildcache"
@@ -63,7 +62,7 @@ if [ "$1" == "build" ];
     echo "### Building images ..."
     fuBUILDIMAGES "" "$myIMAGESBASE" ""
     fuBUILDIMAGES "elk/" "$myIMAGESELK" ""
-    fuBUILDIMAGES "tanner/" "$myIMAGESTANNER" ""
+    # fuBUILDIMAGES "tanner/" "$myIMAGESTANNER" ""
 fi
 
 # Build and push images
@@ -74,6 +73,6 @@ if [ "$1" == "push" ];
     echo "### Building and pushing images ..."
     fuBUILDIMAGES "" "$myIMAGESBASE" "--push"
     fuBUILDIMAGES "elk/" "$myIMAGESELK" "--push"
-    fuBUILDIMAGES "tanner/" "$myIMAGESTANNER" "--push"
+    # fuBUILDIMAGES "tanner/" "$myIMAGESTANNER" "--push"
 fi
 
